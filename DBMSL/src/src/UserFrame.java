@@ -246,7 +246,7 @@ public class UserFrame extends Frame implements ActionListener {
 	String[] list_of_cities= {"Screen1","Screen2","Screen3bigstring fits in or not"};
 	String[] list_of_dates= {"Movie1","Movie2","Movie3bigstring fits in or not"};
 	String[] list_of_time= {"Theatre1","Theatre2","Theatre3bigstring fits in or not"};
-	String seats= "1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10";
+	String seats= "1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 \n 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10";
 	String[] active= {"active 1","active 2"};
 	String[] history= {"hist 1","hist 2"};
 	
@@ -479,18 +479,21 @@ public class UserFrame extends Frame implements ActionListener {
 	   	JLabel seating=new JLabel("ABCDFSKFSEFGS:LAFFAjkahlafjlajfljfelknflksjfalhdkgsaugiBDAKK");
         JTextArea seatnew=new JTextArea();
         seatnew.setEditable(false);
-        seatnew.add(seating);
+        //seatnew.add(seating);
+        seatnew.setText(seats);
+        seatnew.setForeground(Color.BLACK);
 	    int v = ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED ;
 	    int h = ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED ;
 	 
 	    //JScrollPane js = new JScrollPane(js, v, h ) ;
-	    JScrollPane scrPane = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, 
+	    JScrollPane scrPane = new JScrollPane(seatnew,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, 
 	    		JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 	    scrPane.setBounds(350,10,500,150);
 	    seatnew.setBounds(350,10,500,150);
-	    scrPane.setPreferredSize(new Dimension(100,100));
+	    scrPane.setPreferredSize(new Dimension(400,150));
+	    scrPane.setMinimumSize(new Dimension(v, h));
 	    //scrPane .getViewport().add( lab_test);
-	    scrPane.add(seatnew);
+	    //scrPane.add(seatnew);
 	    
 	   	//js.setBounds(250,500,900,150);
 	   	
